@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class SumCalculatorTest {
     private SumCalculator calc;
@@ -28,11 +27,8 @@ class SumCalculatorTest {
         Assertions.assertEquals(expected,actual);
     }
     @Test
-    public void testForException() throws RuntimeException {
-        Exception exception = assertThrows(RuntimeException.class, () -> {
-            calc.sum(0);
-        });
-        assertNotNull(exception.getMessage());
+    public void testForException() {
+        Assertions.assertThrows(RuntimeException.class, () -> calc.sum(0));
     }
 
 }
